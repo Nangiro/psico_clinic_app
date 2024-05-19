@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  composer:
+    restart: unless-stopped
+
+  node:
+    restart: unless-stopped
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: psico-mailhog
+    restart: unless-stopped
+    command: [ "-storage=maildir", "-maildir-path=/maildir" ]
+    volumes:
+      - ./.docker/mailhog/volume:/maildir
+    ports:
+      - ${MAILHOG_PORT:-8025}:8025
+    networks:
+      - psiconetwork
