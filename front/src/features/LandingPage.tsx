@@ -1,3 +1,4 @@
+import { useForm } from "react-hook-form";
 import Carousel from "../components/Carousel"
 
 export default function LandingPage() {
@@ -28,6 +29,18 @@ export default function LandingPage() {
             name: 'Lucas Miguel'
         },
     ];
+
+    const { register, handleSubmit, formState: { isValid } } = useForm({
+        defaultValues: {
+            nome: '',
+            email: '',
+            desc: ''
+        }
+    });
+
+    const onSubmit =( data: any )=> {
+        console.log(data)
+    };
 
     return (
         <div className="w-full bg-[#E3E5D8] h-full">
@@ -76,6 +89,47 @@ export default function LandingPage() {
                     <h1 className="text-[#355245]" >Depoimentos de Pacientes</h1>
                     <div className="px-12">
                         <Carousel cards={cards} />
+                    </div>
+                </div>
+            </div>
+            <div className="flex justify-center mt-4 px-4">
+                <div className="max-w-[1366px] w-full">
+                    <h1 className="text-[#355245]" >Formulario de contato</h1>
+                    <div className="p-12 border border-black flex justify-center items-center rounded-lg">
+                        <form className="text-black" onSubmit={handleSubmit(onSubmit)} id="contato">
+                            <div className={`w-full flex flex-col text-white gap-1 items-start `}>
+                                <span className="text-black">Nome</span>
+                                <input 
+                                    className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-white"
+                                    {...register("nome", {required: true})}
+                                />
+                            </div>
+                            <div className={`w-full flex flex-col text-white gap-1 items-start `}>
+                                <span className="text-black">Email</span>
+                                <input 
+                                    className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-white"
+                                    {...register("email", {required: true})}
+                                />
+                            </div>
+                            <div className={`w-full flex flex-col text-white gap-1 items-start `}>
+                                <span className="text-black">Nome</span>
+                                <input 
+                                    className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-white"
+                                    {...register("desc", {required: true})}
+                                />
+                            </div>
+                            <button type="submit" form="contato">
+                                Enviar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div className="flex justify-center mt-4 px-4">
+                <div className="max-w-[1366px] w-full">
+                    <h1 className="text-[#355245]" >Informações de contato</h1>
+                    <div className="px-12">
+                        telefone email endereço horario de funcionamento
                     </div>
                 </div>
             </div>
