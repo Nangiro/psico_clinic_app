@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SessionHistory extends Model
 {
@@ -25,4 +26,9 @@ class SessionHistory extends Model
         'schedule_id',
         'note',
     ];
+
+    public function schedule(): BelongsTo
+    {
+        return $this->belongsTo(ScheduleHistory::class, 'schedule_id');
+    }
 }
