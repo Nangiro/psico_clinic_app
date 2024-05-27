@@ -14,10 +14,14 @@ class UserSessionController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // public function index(Request $request)
-    // {
-    //
-    // }
+    public function index(Request $request)
+    {
+        $sessions = UserSession::all();
+
+        return Inertia::render('UserSession/UserSession', [
+            'sessions' => $sessions
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.
