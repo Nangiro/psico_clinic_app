@@ -45,7 +45,6 @@ class PatientController extends Controller
         $request->validate( //TODO: ADD VALIDATION
             [
                 'user_id' => 'required|unique:patients',
-                'name' => 'required',
                 'address' => 'required',
                 'number' => 'required',
                 'city' => 'required',
@@ -57,7 +56,6 @@ class PatientController extends Controller
 
         $patient = Patient::create([
             'user_id' => $request->user_id,
-            'name' => $request->name,
             'address' => $request->address,
             'number' => $request->number,
             'city' => $request->city,
@@ -106,7 +104,6 @@ class PatientController extends Controller
         $request->validate( //TODO: ADD VALIDATION
             [
                 'user_id' => 'required|unique:patients',
-                'name' => 'required',
                 'address' => 'required',
                 'number' => 'required',
                 'city' => 'required',
@@ -118,7 +115,6 @@ class PatientController extends Controller
 
         $patient->update([
             'user_id' => $request->user_id,
-            'name' => $request->name,
             'address' => $request->address,
             'number' => $request->number,
             'city' => $request->city,

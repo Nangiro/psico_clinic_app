@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Patient extends Model
+class UserSession extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,7 @@ class Patient extends Model
      *
      * @var string
      */
-    protected $table = 'patients';
+    protected $table = 'user_sessions';
 
     /**
      * The attributes that are mass assignable.
@@ -24,12 +24,7 @@ class Patient extends Model
      */
     protected $fillable = [
         'user_id',
-        'address',
-        'number',
-        'city',
-        'state',
-        'country',
-        'cellphone'
+        'token',
     ];
 
     public function user(): BelongsTo

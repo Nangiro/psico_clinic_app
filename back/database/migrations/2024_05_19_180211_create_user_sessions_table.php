@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('session_history', function (Blueprint $table) {
+        Schema::create('user_sessions', function (Blueprint $table) {
             $table->id();
-            $table->integer('schedule_id')->unsigned();
-            $table->foreign('schedule_id')->references('id')->on('schedules_history'); // SCHEDULE
-            $table->text('note')->nullable(); // NOTA
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users'); // USER
+            $table->string('token')->nullable(); // TOKEN
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('session_history');
+        Schema::dropIfExists('user_sessions');
     }
 };

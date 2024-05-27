@@ -19,10 +19,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
-        'pwd',
         'type',
         'last_access'
     ];
@@ -60,5 +60,10 @@ class User extends Authenticatable
     public function schedules(): HasMany
     {
         return $this->hasMany(ScheduleHistory::class);
+    }
+
+    public function session(): HasOne
+    {
+        return $this->hasOne(UserSession::class);
     }
 }

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users'); // USUÁRIO
-            $table->string('name'); // NOME COMPLETO
             $table->string('address'); // RUA
             $table->string('number'); // NÚMERO DA RUA
             $table->string('city'); // CIDADE
