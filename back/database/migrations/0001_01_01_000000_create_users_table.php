@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->int('type')->nullable()->comment('1 - Paciente | 2 - Psicólogo(a) | 3 - Secretário(a)'); // TIPO DE USUÁRIO
+            $table->integer('type')->nullable()->comment('1 - Paciente | 2 - Psicólogo(a) | 3 - Secretário(a)'); // TIPO DE USUÁRIO
             $table->timestamp('last_access')->nullable(); // ÚLTIMO ACESSO
             $table->rememberToken();
             $table->timestamps();
