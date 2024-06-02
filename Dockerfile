@@ -41,10 +41,10 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 RUN cp .env.example .env
 
-RUN php artisan key:generate
-RUN php artisan migrate
+# RUN php artisan key:generate
+# RUN php artisan migrate
 
-RUN nohup php artisan serve &
+# RUN nohup php artisan serve &
 
 
 # Voltar para o usuário root para as etapas seguintes
