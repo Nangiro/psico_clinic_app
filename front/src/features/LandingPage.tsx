@@ -43,7 +43,7 @@ export default function LandingPage() {
     };
 
     return (
-        <div className="w-full bg-[#E3E5D8] h-full">
+        <div className="w-full bg-[#E3E5D8] h-full overflow-auto">
             <div className="flex justify-center border-b-[#355245] border-b-[1px] h-12">
                 <div className="flex w-full max-w-[1366px] items-center justify-between px-8 h-full">
                     <p>Home</p>
@@ -92,10 +92,10 @@ export default function LandingPage() {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center mt-4 px-4">
+            <div className="flex justify-center mt-12 px-4">
                 <div className="max-w-[1366px] w-full">
                     <h1 className="text-[#355245]" >Formulario de contato</h1>
-                    <div className="p-12 border border-black flex justify-center items-center rounded-lg">
+                    <div className="p-12 flex justify-center items-center rounded-lg">
                         <form className="text-black" onSubmit={handleSubmit(onSubmit)} id="contato">
                             <div className={`w-full flex flex-col text-white gap-1 items-start `}>
                                 <span className="text-black">Nome</span>
@@ -118,7 +118,7 @@ export default function LandingPage() {
                                     {...register("desc", {required: true})}
                                 />
                             </div>
-                            <button type="submit" form="contato">
+                            <button type="submit" form="contato" className="bg-[#648374] mt-4">
                                 Enviar
                             </button>
                         </form>
