@@ -1,3 +1,5 @@
+import { useQuery } from "react-query"
+
 async function request(path: string, config: RequestInit): Promise<Response>{
 
     const customConfig = config
@@ -95,4 +97,11 @@ export async function del<TResponse>(path: string, config?: RequestInit): Promis
     }
 
     return ((await request(path, init)).json().catch(() => ({})))
+}
+
+
+export function useCEP(cep: string, enabled: boolean) {
+    const response = useQuery(['cep', cep], () => getWithNotCORS<any>(`https://viacep.com.br/ws/${cep}/json/`).then((res) => res), {enabled: enabled, retry: 0})
+
+    return response
 }

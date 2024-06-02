@@ -4,13 +4,15 @@ export function Input({
     onChange,
     value,
     type = 'text',
-    rest
+    rest,
+    disabled = false
 } : {
     label?: string
     className?: string
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
     value?: string
     type?: string
+    disabled?: boolean
     rest?: any
 }) {
     return  (
@@ -21,6 +23,7 @@ export function Input({
                 className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-white"
                 onChange={onChange}
                 value={value}
+                disabled={disabled}
                 {...rest}
             />
         </div>
