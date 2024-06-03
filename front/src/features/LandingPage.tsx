@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import Carousel from "../components/Carousel"
+import { Button } from "../components/Button";
+import { Facebook, Instagram, Linkedin } from "react-feather";
 
 export default function LandingPage() {
     const cards = [
@@ -43,93 +45,134 @@ export default function LandingPage() {
     };
 
     return (
-        <div className="w-full bg-[#E3E5D8] h-full">
-            <div className="flex justify-center border-b-[#355245] border-b-[1px] h-12">
-                <div className="flex w-full max-w-[1366px] items-center justify-between px-8 h-full">
-                    <p>Home</p>
-                    <p>Nossos serviços</p>
-                    <p>Quem somoso</p>
-                    <p>Depoimentos</p>
-                    <p>Formulario de contato</p>
-                    <p>Informações de contato</p>
-                    <p>Entrar</p>
+        <div className="w-full bg-background text-bodyText">
+            <div className="flex justify-center h-12">
+                <div className="flex w-full max-w-[1366px] items-center justify-between h-full">
+                    <p className="font-bold text-2xl font-['poppins']">Clinica bem estar</p>
+                    <div className="flex">
+                        <p className="mr-4 font-['poppins']">Home</p>
+                        <p className="mr-4 font-['poppins']">Nossos serviços</p>
+                        <p className="mr-4 font-['poppins']">Quem somoso</p>
+                        <p className="mr-4 font-['poppins']">Depoimentos</p>
+                        <p className="mr-4 font-['poppins']">Formulario de contato</p>
+                        <p className="mr-4 font-['poppins']">Informações de contato</p>
+                        <p className="font-['poppins']">Entrar</p>
+                    </div>
                 </div> 
             </div>
             <div className="flex justify-center">
                 <img className="w-full max-w-[1366px]" src="https://cdn.pixabay.com/photo/2019/05/27/07/26/mental-health-4232031_1280.jpg" />
             </div>
-            <div className="flex justify-center mt-4 px-4">
-                <div className="max-w-[1366px] w-full">
-                    <h1 className="text-[#355245] ">Nossos serviços</h1>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis.  Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Interagi no mé, cursus quis, vehicula ac nisi. Eu nunca mais boto a boca num copo de cachaça, agora eu só uso canudis! Leite de capivaris, leite de mula manquis sem cabeça.</p>
-                    <h2 className="text-[#355245] text-[32px] mt-4">Terapia Individual</h2>
-                    <p>
-                        Mussum Ipsum, cacilds vidis litro abertis.  Quem num gosta di mim que vai caçá sua turmis! Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Mé faiz elementum girarzis, nisi eros vermeio. Quem manda na minha terra sou euzis!
-                    </p>
-                    <h2 className="text-[#355245] text-[32px] mt-4">Terapia de casal</h2>
-                    <p>
-                        Mussum Ipsum, cacilds vidis litro abertis.  Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Manduma pindureta quium dia nois paga. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Interagi no mé, cursus quis, vehicula ac nisi.
-                    </p>
-                    <h2 className="text-[#355245] text-[32px] mt-4">Terapia para Desenvolvedores</h2>
-                    <p>
-                        Mussum Ipsum, cacilds vidis litro abertis.  Cevadis im ampola pa arma uma pindureta. Viva Forevis aptent taciti sociosqu ad litora torquent. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Detraxit consequat et quo num tendi nada.
-                        Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Mé faiz elementum girarzis, nisi eros vermeio. Quem num gosta di mim que vai caçá sua turmis!
-                    </p>
-                </div>
-            </div>
-            <div className="flex justify-center mt-4 px-4">
-                <div className="max-w-[1366px] w-full">
-                    <h1 className="text-[#355245] ">Quem somos</h1>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis.  Sapien in monti palavris qui num significa nadis i pareci latim. Quem num gosta di mim que vai caçá sua turmis! Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.</p>
-                    <p>Diuretics paradis num copo é motivis de denguis. Leite de capivaris, leite de mula manquis sem cabeça. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Mé faiz elementum girarzis, nisi eros vermeio.</p>
-                </div>
-            </div>
-            <div className="flex justify-center mt-4 px-4">
-                <div className="max-w-[1366px] w-full">
-                    <h1 className="text-[#355245]" >Depoimentos de Pacientes</h1>
-                    <div className="px-12">
-                        <Carousel cards={cards} />
+            <div className=" flex justify-center items-center mt-20">
+                <div className="max-w-[1366px]">
+                    <div className="justify-between flex">
+                        <div className="bg-white shadow-xl  w-72 rounded-xl p-6">
+                            <h2 className="text-[24px] font-poppins font-bold text-center">Terapia Junguiana</h2>
+                            <p className="mt-4 font-roboto">
+                                Mussum Ipsum, cacilds vidis litro abertis.  Quem num gosta di mim que vai caçá sua turmis! Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Mé faiz elementum girarzis, nisi eros vermeio. Quem manda na minha terra sou euzis!
+                            </p>
+                        </div>
+                        <div className="bg-white shadow-xl w-72 rounded-xl p-6">
+                            <h2 className="text-[24px] font-poppins font-bold text-center">Terapia Behaviorista</h2>
+                            <p className="mt-4 font-roboto">
+                                Mussum Ipsum, cacilds vidis litro abertis.  Quem num gosta di mim que vai caçá sua turmis! Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Mé faiz elementum girarzis, nisi eros vermeio. Quem manda na minha terra sou euzis!
+                            </p>
+                        </div>
+                        <div className="bg-white shadow-xl w-72 rounded-xl p-6">
+                            <h2 className="text-[24px] font-poppins font-bold text-center">Humanismo</h2>
+                            <p className="mt-4 font-roboto">
+                                Mussum Ipsum, cacilds vidis litro abertis.  Quem num gosta di mim que vai caçá sua turmis! Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Mé faiz elementum girarzis, nisi eros vermeio. Quem manda na minha terra sou euzis!
+                            </p>
+                        </div>
+                        <div className="bg-white shadow-xl w-72 rounded-xl p-6">
+                            <h2 className="text-[24px] font-poppins font-bold text-center">Terapia Psicanalítica</h2>
+                            <p className="mt-4 font-roboto">
+                                Mussum Ipsum, cacilds vidis litro abertis.  Quem num gosta di mim que vai caçá sua turmis! Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Mé faiz elementum girarzis, nisi eros vermeio. Quem manda na minha terra sou euzis!
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex justify-between mt-[160px] items-center">
+                        <div className="max-w-[720px] w-full">
+                            <h1 className="font-bold font-poppins">Quem somos</h1>
+                            <p className="mt-8 font-roboto">Mussum Ipsum, cacilds vidis litro abertis.  Sapien in monti palavris qui num significa nadis i pareci latim. Quem num gosta di mim que vai caçá sua turmis! Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.</p>
+                            <p className="font-roboto">Diuretics paradis num copo é motivis de denguis. Leite de capivaris, leite de mula manquis sem cabeça. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Mé faiz elementum girarzis, nisi eros vermeio.</p>
+                            <Button className="bg-[#35C9B6] mt-2 text-white font-poppins" label="Saiba mais"/>
+                        </div>
+                        <img className="w-full max-w-[480px]" src="https://cdn.pixabay.com/photo/2018/04/25/22/49/brain-3350799_1280.png" />
+                    </div>
+
+                    <div className="flex justify-center mt-20">
+                        <div className="max-w-[1366px] w-full">
+                            {/* <h1 className="font-bold font-poppins text-bodyText" >O que falam sobre nós</h1> */}
+                            <div className="px-12">
+                                <Carousel cards={cards} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex justify-center mt-28">
+                        <div className="w-full">
+                            <h1 className="font-bold font-poppins" >Fale conosco</h1>
+                            {/* <div className="flex justify-center items-center"> */}
+                                <form className="text-black" onSubmit={handleSubmit(onSubmit)} id="contato">
+                                    <div className="flex mt-6 gap-8 mb-2">
+                                        <div className={`w-full flex flex-col text-white gap-1 items-start `}>
+                                            <span className="text-black font-roboto">Nome</span>
+                                            <input 
+                                                className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-background font-roboto"
+                                                {...register("nome", {required: true})}
+                                            />
+                                        </div>
+                                        <div className={`w-full flex flex-col text-white gap-1 items-start`}>
+                                            <span className="text-bodyText font-roboto">Email</span>
+                                            <input 
+                                                className="rounded-lg border-2 border-black w-full h-9 text-bodyText p-2 bg-background"
+                                                {...register("email", {required: true})}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className={`w-full flex flex-col text-white gap-1 items-start `}>
+                                        <span className="text-black">Mensagem</span>
+                                        <input 
+                                            className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-background"
+                                            {...register("desc", {required: true})}
+                                        />
+                                    </div>
+                                    <button className="bg-[#35C9B6] mt-4 text-white font-poppins" type="submit" form="contato">
+                                        Enviar
+                                    </button>
+                                </form>
+                            {/* </div> */}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center mt-4 px-4">
-                <div className="max-w-[1366px] w-full">
-                    <h1 className="text-[#355245]" >Formulario de contato</h1>
-                    <div className="p-12 border border-black flex justify-center items-center rounded-lg">
-                        <form className="text-black" onSubmit={handleSubmit(onSubmit)} id="contato">
-                            <div className={`w-full flex flex-col text-white gap-1 items-start `}>
-                                <span className="text-black">Nome</span>
-                                <input 
-                                    className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-white"
-                                    {...register("nome", {required: true})}
-                                />
-                            </div>
-                            <div className={`w-full flex flex-col text-white gap-1 items-start `}>
-                                <span className="text-black">Email</span>
-                                <input 
-                                    className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-white"
-                                    {...register("email", {required: true})}
-                                />
-                            </div>
-                            <div className={`w-full flex flex-col text-white gap-1 items-start `}>
-                                <span className="text-black">Nome</span>
-                                <input 
-                                    className="rounded-lg border-2 border-black w-full h-9 text-black p-2 bg-white"
-                                    {...register("desc", {required: true})}
-                                />
-                            </div>
-                            <button type="submit" form="contato">
-                                Enviar
-                            </button>
-                        </form>
+            <div className="flex justify-center mt-20 border-solid border-t border-[#35C9B6] pb-4">
+                <div className="max-w-[1366px] w-full flex justify-between">
+                    <div>
+                        <div className="mt-4">
+                            <p className="font-poppins text-bodyText text-[12px] font-bold">Contato</p>
+                            <p className="font-roboto text-bodyText text-[14px]">(19)3333-3333</p>
+                        </div>
+                        <div className="mt-2">
+                            <p className="font-poppins text-bodyText text-[12px] font-bold">Endereço</p>
+                            <p className="font-roboto text-bodyText text-[14px]">Rua Orosimbo Maia, 237 - Campinas/SP</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div className="flex justify-center mt-4 px-4">
-                <div className="max-w-[1366px] w-full">
-                    <h1 className="text-[#355245]" >Informações de contato</h1>
-                    <div className="px-12">
-                        telefone email endereço horario de funcionamento
+                    <div className="mt-4">
+                        <div className="mt-2">
+                            <p className="font-poppins text-bodyText text-[12px] font-bold">Funcionamento</p>
+                            <p className="font-roboto text-bodyText text-[14px]">Seg - Sex: 09:00 às 18:00</p>
+                        </div>
+                    </div>
+                    <div className="mt-4">
+                        <div className="flex mt-4">
+                            <Facebook />
+                            <p className="font-roboto text-bodyText text-[14px] ml-4">/Clinicabemestar</p>
+                        </div>
+                        <div className="flex mt-4">
+                            <Instagram />
+                            <p className="font-roboto text-bodyText text-[14px] ml-4">@Clinicabemestar</p>
+                        </div>
                     </div>
                 </div>
             </div>
