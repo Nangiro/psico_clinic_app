@@ -67,10 +67,14 @@ class ScheduleHistoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
-    //
-    // }
+    public function show($id)
+    {
+        $schedule = ScheduleHistory::findOrFail($id);
+
+        return Inertia::render('ScheduleHistory/Info', [
+            'schedule' => $schedule,
+        ]);
+    }
 
     /**
      * Show the form for editing the specified resource.

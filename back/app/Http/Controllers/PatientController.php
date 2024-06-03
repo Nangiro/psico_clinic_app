@@ -29,10 +29,10 @@ class PatientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function create()
-    // {
-    //     return Inertia::render('Patients/Create', []);
-    // }
+    public function create()
+    {
+        return Inertia::render('Patients/Create');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -54,7 +54,7 @@ class PatientController extends Controller
             ],
         );
 
-        $patient = Patient::create([
+        Patient::create([
             'user_id' => $request->user_id,
             'address' => $request->address,
             'number' => $request->number,
@@ -74,10 +74,14 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
-    //
-    // }
+    public function show($id)
+    {
+        $patient = Patient::findOrFail($id);
+
+        return Inertia::render('Patients/Info', [
+            'patient' => $patient
+        ]);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -85,10 +89,14 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function edit($id)
-    // {
-    //
-    // }
+    public function edit($id)
+    {
+        $patient = Patient::findOrFail($id);
+
+        return Inertia::render('Patients/Edit', [
+            'patient' => $patient
+        ]);
+    }
 
     /**
      * Update the specified resource in storage.
