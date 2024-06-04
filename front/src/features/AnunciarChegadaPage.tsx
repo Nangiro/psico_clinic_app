@@ -24,7 +24,7 @@ export default function AnunciarChegada () {
             cell: ({row}) => {
                 return (
                     // ANUNCIAR CHEGADA AQUI
-                    <Button onClick={() => ""} className="bg-black/50" label="Chegou"/>
+                    <Button onClick={() => ""} className="bg-[#35C9B6] mt-4 text-white font-poppins" label="Chegou"/>
                 )
             }
         }
@@ -46,9 +46,9 @@ export default function AnunciarChegada () {
     })
 
     return (
-        <div className="w-full h-full bg-[#BEE1E3] flex flex-col gap-10 justify-start items-start p-20">
-            <button onClick={() => ""} className="text-[#355245] ">Voltar</button>
-            <div className="bg-[#1ABC9C] h-full w-full min-w-[400px] p-10 gap-10">
+        <div className="w-full h-full bg-background flex flex-col gap-10 justify-start items-start p-20">
+            <button onClick={() => ""} className="bg-[#35C9B6] mt-4 text-white font-poppins">Voltar</button>
+            <div className="bg-background shadow-lg h-full w-full min-w-[400px] p-10 gap-10">
                 <TableComponent table={table}/>
             </div>
         </div>

@@ -16,7 +16,8 @@ export default function App() {
   return (
     <div className='w-screen h-full flex '>
         {/* <AuthProvider> */}
-            <CriarAgendamentoPage />
+            <AnunciarChegada />
+            {/* <CriarAgendamentoPage /> */}
             {/* <VerFicha /> */}
             {/* <VerConsultas /> */}
             {/* <PsicologaPage /> */}
