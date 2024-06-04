@@ -13,7 +13,7 @@ class MailController extends Controller
     public function sendClinicForm(Request $request)
     {
         Mail::to('psico@clinic.com')->send(new SendMailForm($request));
-        return Inertia::render('/')
+        return Inertia::render('App')
             ->with('success', 'Formulário enviado com sucesso!');
     }
 }

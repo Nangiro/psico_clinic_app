@@ -2,7 +2,8 @@ import { useForm } from "react-hook-form";
 import Carousel from "../components/Carousel"
 import { Button } from "../components/Button";
 import { Facebook, Instagram, Linkedin } from "react-feather";
-import { router } from '@inertiajs/react'
+import { Link, router } from '@inertiajs/react'
+
 
 export default function LandingPage() {
     const cards = [
@@ -42,7 +43,7 @@ export default function LandingPage() {
     });
 
     const onSubmit = (data) => {
-        router.post('/mail/form', data)
+        router.post(route('mail.form'), data)
     };
 
     return (
@@ -51,13 +52,14 @@ export default function LandingPage() {
                 <div className="flex w-full max-w-[1366px] items-center justify-between h-full">
                     <p className="font-bold text-2xl font-['poppins']">Clinica bem estar</p>
                     <div className="flex">
-                        <p className="mr-4 font-['poppins']">Home</p>
+                        <Link className="mr-4 font-['poppins']" href={route('index')}>Home</Link>
                         <p className="mr-4 font-['poppins']">Nossos serviços</p>
                         <p className="mr-4 font-['poppins']">Quem somos</p>
                         <p className="mr-4 font-['poppins']">Depoimentos</p>
                         <p className="mr-4 font-['poppins']">Formulario de contato</p>
                         <p className="mr-4 font-['poppins']">Informações de contato</p>
-                        <p className="font-['poppins']">Entrar</p>
+                        <Link className="mr-4 font-['poppins']" href={route('login')}>Entrar</Link>
+                        <Link className="mr-4 font-['poppins']" href={route('register')}>Registrar</Link>
                     </div>
                 </div>
             </div>
@@ -94,7 +96,7 @@ export default function LandingPage() {
                     </div>
                     <div className="flex justify-between mt-[160px] items-center">
                         <div className="max-w-[720px] w-full">
-                            <h1 className="font-bold font-poppins">Quem somos</h1>
+                            <h1 className="font-bold font-poppins text-[3.2em]">Quem somos</h1>
                             <p className="mt-8 font-roboto">Mussum Ipsum, cacilds vidis litro abertis.  Sapien in monti palavris qui num significa nadis i pareci latim. Quem num gosta di mim que vai caçá sua turmis! Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.</p>
                             <p className="font-roboto">Diuretics paradis num copo é motivis de denguis. Leite de capivaris, leite de mula manquis sem cabeça. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Mé faiz elementum girarzis, nisi eros vermeio.</p>
                             <Button className="bg-[#35C9B6] mt-2 text-white font-poppins" label="Saiba mais" />
@@ -112,7 +114,7 @@ export default function LandingPage() {
                     </div>
                     <div className="flex justify-center mt-28">
                         <div className="w-full">
-                            <h1 className="font-bold font-poppins" >Fale conosco</h1>
+                            <h1 className="font-bold font-poppins text-[3.2em]" >Fale conosco</h1>
                             {/* <div className="flex justify-center items-center"> */}
                             <form className="text-black" onSubmit={handleSubmit(onSubmit)} id="contato">
                                 <div className="flex mt-6 gap-8 mb-2">

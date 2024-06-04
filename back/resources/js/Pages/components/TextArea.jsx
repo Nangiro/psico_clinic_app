@@ -12,7 +12,7 @@ export function TextArea({
             <span>{label}</span>
             <textarea
                 type={type}
-                className="rounded-lg border-2 border-black w-full text-black p-2 bg-white resize-none"
+                className="rounded-lg font-roboto text-bodyText text-[14px] bg-background border-2 border-black w-full p-2 resize-none"
                 onChange={onChange}
                 value={value}
                 disabled={disabled}

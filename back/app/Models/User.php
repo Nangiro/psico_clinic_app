@@ -52,6 +52,15 @@ class User extends Authenticatable
         ];
     }
 
+    public function getRedirectRoute()
+    {
+        return match ((int)$this->type) {
+            1 => 'client.index',
+            2 => 'psychologist.index',
+            3 => 'secretary.index',
+        };
+    }
+
     public function patient(): HasOne
     {
         return $this->hasOne(Patient::class);

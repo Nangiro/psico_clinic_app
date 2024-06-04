@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\User;
+use App\Models\ScheduleHistory;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -15,12 +16,14 @@ class PatientController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+    public function index($id)
     {
-        $patients = Patient::with('user')->get();
+        $patient = Patient::with('user')->where('user_id', $id)->first();
+        $schedules = ScheduleHistory::with('psychologist')->where('patient_id', $patient->id)->orderBy('schedule_time', 'asc')->get();
 
-        return Inertia::render('Patients/Patients', [
-            'patients' => $patients
+        return Inertia::render('features/ClientePage', [
+            'patient' => $patient,
+            'schedules' => $schedules,
         ]);
     }
 

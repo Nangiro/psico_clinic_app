@@ -23,12 +23,12 @@ class SessionHistory extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'schedule_id',
+        'schedule_history_id',
         'note',
     ];
 
     public function schedule(): BelongsTo
     {
-        return $this->belongsTo(ScheduleHistory::class, 'schedule_id');
+        return $this->belongsTo(ScheduleHistory::class, 'schedule_history_id');
     }
 }
