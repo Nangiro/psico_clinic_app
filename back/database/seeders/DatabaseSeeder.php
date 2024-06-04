@@ -17,33 +17,33 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $client = User::create([
-            'username' => 'client',
-            'name' => 'client',
-            'email' => 'client@clinic.com',
-            'password' => 'client',
+            'username' => 'gusta',
+            'name' => 'Gustavo Dias',
+            'email' => 'gusta@clinic.com',
+            'password' => 'gusta',
             'type' => 1,
         ]);
         Patient::create([
             'user_id' => $client->id,
             'address' => 'Rua Teste',
             'cep' => '13332569',
-            'number' => '69',
+            'number' => '10',
             'city' => 'Cidade Teste',
             'state' => 'SP',
             'cellphone' => '19999245035'
         ]);
         User::create([
-            'username' => 'psico',
-            'name' => 'psico',
+            'username' => 'clara',
+            'name' => 'Clara Joana',
             'email' => 'psico@clinic.com',
-            'password' => 'psico',
+            'password' => 'clara',
             'type' => 2,
         ]);
         User::create([
-            'username' => 'secretary',
-            'name' => 'secretary',
+            'username' => 'dolores',
+            'name' => 'Dores Dolores',
             'email' => 'secretary@clinic.com',
-            'password' => 'secretary',
+            'password' => 'dolores',
             'type' => 3,
         ]);
     }

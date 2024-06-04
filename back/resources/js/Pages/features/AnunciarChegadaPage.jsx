@@ -4,7 +4,7 @@ import TableComponent from '../components/Table'
 import { Button } from "../components/Button"
 import { Link, router } from '@inertiajs/react'
 
-export default function AnunciarChegada({ id, schedules }) {
+export default function AnunciarChegada({ id, schedules, patient }) {
 
     const voltar = () => {
         router.get(route('secretary.index', id))
@@ -39,7 +39,7 @@ export default function AnunciarChegada({ id, schedules }) {
             header: () => "Paciente",
             cell: ({ row }) => {
                 if (row.original.patient != undefined) {
-                    return <p>{row.original.patient.name}</p>
+                    return <p>{row.original.patient.user.name}</p>
                 }
             }
         },

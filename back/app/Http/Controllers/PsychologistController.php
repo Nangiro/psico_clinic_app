@@ -29,7 +29,7 @@ class PsychologistController extends Controller
 
     public function showSessions($id)
     {
-        $schedules = ScheduleHistory::has('session')->with('patient')->where('psychologist_id', $id)->get();
+        $schedules = ScheduleHistory::has('session')->with('patient.user')->where('psychologist_id', $id)->orderBy('schedule_time', 'asc')->get();
         return Inertia::render('features/VerConsultas', [
             'id' => $id,
             'schedules' => $schedules,
