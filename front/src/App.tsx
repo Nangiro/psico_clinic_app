@@ -9,13 +9,15 @@ import VerConsultas from './features/VerConsultas'
 import VerFicha from './features/VerFicha'
 import LandingPage from './features/LandingPage'
 import LoginPage from './features/LoginPage'
+import CriarAgendamentoPage from './features/CriarAgendamentoPage'
 
 export default function App() {
   
   return (
     <div className='w-screen h-full flex '>
         {/* <AuthProvider> */}
-            <VerFicha />
+            <CriarAgendamentoPage />
+            {/* <VerFicha /> */}
             {/* <VerConsultas /> */}
             {/* <PsicologaPage /> */}
             {/* <SecretariaPage /> */}
