@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('session_history', function (Blueprint $table) {
             $table->id();
-            $table->integer('schedule_id')->unsigned();
-            $table->foreign('schedule_id')->references('id')->on('schedules_history'); // SCHEDULE
+            $table->integer('schedule_history_id')->unsigned();
+            $table->foreign('schedule_history_id')->references('id')->on('schedules_history'); // SCHEDULE
             $table->text('note')->nullable(); // NOTA
             $table->timestamps();
         });

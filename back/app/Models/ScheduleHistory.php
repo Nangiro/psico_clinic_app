@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class ScheduleHistory extends Model
 {
@@ -26,6 +26,7 @@ class ScheduleHistory extends Model
     protected $fillable = [
         'patient_id',
         'psychologist_id',
+        'schedule_time'
     ];
 
     public function patient(): BelongsTo
@@ -38,8 +39,8 @@ class ScheduleHistory extends Model
         return $this->belongsTo(User::class, 'psychologist_id');
     }
 
-    public function sessions(): HasMany
+    public function session(): HasOne
     {
-        return $this->hasMany(SessionHistory::class);
+        return $this->hasOne(SessionHistory::class);
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('patient_id')->references('id')->on('users'); // PACIENTE
             $table->integer('psychologist_id')->unsigned();
             $table->foreign('psychologist_id')->references('id')->on('users'); // PSICÓLOGO(A)
+            $table->timestamp('schedule_time');
             $table->timestamps();
         });
     }

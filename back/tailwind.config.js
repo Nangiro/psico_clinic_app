@@ -11,10 +11,15 @@ export default {
     ],
 
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+        fontFamily: {
+            'roboto': ["Roboto"],
+            'poppins': ["Poppins"]
+        },
+        extend: {},
+        colors: {
+            'background': '#F8FBFF',
+            'bodyText': '#101916',
+            'greenblue': '#35C9B6'
         },
     },
 

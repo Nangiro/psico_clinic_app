@@ -16,10 +16,10 @@ return new class extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users'); // USUÁRIO
             $table->string('address'); // RUA
+            $table->string('cep'); // CEP
             $table->string('number'); // NÚMERO DA RUA
             $table->string('city'); // CIDADE
             $table->string('state'); // ESTADO
-            $table->string('country'); // PAÍS
             $table->string('cellphone'); // TELEFONE - CELULAR
             $table->timestamps();
         });

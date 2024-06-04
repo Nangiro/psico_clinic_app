@@ -27,8 +27,8 @@ class SendMailForm extends Mailable
      */
     public function build(): static
     {
-        $mail = $this->from('psico.clinic@puc.com')
-            ->replyTo('psico.clinic@puc.com')
+        $mail = $this->from('oper-psico@clinic.com')
+            ->replyTo('oper-psico@clinic.com')
             ->subject('Formulário de Contato');
 
         $mail = $mail->view('mail.form', ['request' => $this->request]);
