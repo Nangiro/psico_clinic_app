@@ -12,7 +12,8 @@ export default {
         extend: {},
         colors: {
             'background': '#F8FBFF',
-            'bodyText': '#101916'
+            'bodyText': '#101916',
+            'greenblue': '#35C9B6'
         },
     },
     plugins: [],

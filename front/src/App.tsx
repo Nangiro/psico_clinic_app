@@ -13,14 +13,16 @@ import LoginPage from './features/LoginPage'
 export default function App() {
   
   return (
-    <div className='w-screen flex bg-[#E3E5D8]'>
-        <AuthProvider>
-            {/* <VerFicha /> */}
+    <div className='w-screen h-full flex '>
+        {/* <AuthProvider> */}
+            <VerFicha />
+            {/* <VerConsultas /> */}
+            {/* <PsicologaPage /> */}
+            {/* <SecretariaPage /> */}
             {/* <ClientePage /> */}
             {/* <LoginPage/> */}
-            <LandingPage/>
-            {/* <Routes/> */}
-        </AuthProvider>
+            {/* <LandingPage/> */}
+        {/* </AuthProvider> */}
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Input } from "../components/InputText"
 import { Button } from "../components/Button"
 import { TextArea } from "../components/TextArea"
+import { ArrowLeft } from "react-feather"
 
 export default function VerFicha () {
 
@@ -32,9 +33,9 @@ export default function VerFicha () {
     }
 
     return (
-        <div className="w-full h-full bg-[#BEE1E3] flex flex-col gap-10 justify-start items-start p-20">
-            <button onClick={() => ""} className="text-[#355245] ">Voltar</button>
-            <div className="bg-[#1ABC9C] h-full w-full min-w-[400px] p-10 gap-10 flex flex-col">
+        <div className="w-full h-full bg-background flex flex-col gap-10 justify-start items-start p-20">
+            <button onClick={() => ""} className="bg-[#35C9B6] mt-4 text-bodyText font-poppins text-[16px] gap-1 flex"><ArrowLeft /> Voltar</button>
+            <div className="bg-background shadow-xl h-full w-full min-w-[400px] p-10 gap-10 flex flex-col">
                 <div className="grid-cols-3 grid items-center justify-center gap-10">
                     <Input 
                         value={name} 
@@ -64,6 +65,7 @@ export default function VerFicha () {
                     <Input 
                         value={numero} 
                         label="Numero"
+                        disabled
                     />
                 </div>
                 <TextArea 
@@ -76,13 +78,16 @@ export default function VerFicha () {
                 />
                 <div className="flex gap-6 w-full justify-end">
                     <Button
+                        className="bg-[#35C9B6] mt-4 text-bodyText font-poppins text-[16px] gap-1 flex"
                         label="Salvar"
                     />
                     <Button
+                        className="bg-[#35C9B6] mt-4 text-bodyText font-poppins text-[16px] gap-1 flex"
                         label="Baixa modelo de Atestado"
                         onClick={DownloadAtestado}
                     />
                     <Button
+                        className="bg-[#35C9B6] mt-4 text-bodyText font-poppins text-[16px] gap-1 flex"
                         label="Baixa modelo de Encaminhamento"
                         onClick={DownloadEncaminhamento}
                     />

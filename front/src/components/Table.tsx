@@ -5,9 +5,9 @@ export default function TableComponent ({table} : {table: Table<any>}) {
         <table>
              <thead>
                 {table.getHeaderGroups().map((headerGroup) => (
-                    <tr key={headerGroup.id} >
+                    <tr key={headerGroup.id}>
                     {headerGroup.headers.map((header) => (
-                        <th key={header.id} className={``}>
+                        <th key={header.id} className={`font-poppins text-bodyText text-[14px] font-bold`} style={{ width: `${header.getSize()+48}px`, textAlign:"left" }}>
                         {header.isPlaceholder
                             ? null
                             : flexRender(
@@ -19,7 +19,7 @@ export default function TableComponent ({table} : {table: Table<any>}) {
                     </tr>
                 ))}
             </thead>
-            <tbody className="">
+            <tbody className="font-roboto text-bodyText text-[14px]">
                     {table.getRowModel().rows.map(row => (
                         <tr key={row.id} className="">
                         {row.getVisibleCells().map(cell => (
