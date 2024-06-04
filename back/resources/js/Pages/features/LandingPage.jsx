@@ -8,7 +8,7 @@ import { Link, router } from '@inertiajs/react'
 export default function LandingPage() {
     const cards = [
         {
-            title: 'Melhor clinica da cidade',
+            title: 'Melhor clínica da cidade',
             description: 'Mussum Ipsum, cacilds vidis litro abertis.  Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Bota 1 metro de cachacis aí pra viagem! Detraxit consequat et quo num tendi nada. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             name: 'Fernando Kira'
         },
@@ -50,7 +50,7 @@ export default function LandingPage() {
         <div className="w-full bg-background text-bodyText">
             <div className="flex justify-center h-12">
                 <div className="flex w-full max-w-[1366px] items-center justify-between h-full">
-                    <p className="font-bold text-2xl font-['poppins']">Clinica bem estar</p>
+                    <p className="font-bold text-2xl font-['poppins']">Clínica Bem-estar</p>
                     <div className="flex">
                         <Link className="mr-4 font-['poppins']" href={route('index')}>Home</Link>
                         <p className="mr-4 font-['poppins']">Nossos serviços</p>
@@ -59,7 +59,6 @@ export default function LandingPage() {
                         <p className="mr-4 font-['poppins']">Formulario de contato</p>
                         <p className="mr-4 font-['poppins']">Informações de contato</p>
                         <Link className="mr-4 font-['poppins']" href={route('login')}>Entrar</Link>
-                        <Link className="mr-4 font-['poppins']" href={route('register')}>Registrar</Link>
                     </div>
                 </div>
             </div>

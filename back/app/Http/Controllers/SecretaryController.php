@@ -76,7 +76,7 @@ class SecretaryController extends Controller
 
     public function anunciarChegada($id)
     {
-        $schedules = ScheduleHistory::with(['psychologist', 'patient'])->doesnthave('session')->get();
+        $schedules = ScheduleHistory::with(['psychologist', 'patient.user'])->doesnthave('session')->where('schedule_time', '>=', now())->orderBy('schedule_time', 'asc')->get();
         return Inertia::render('features/AnunciarChegadaPage', [
             'id' => $id,
             'schedules' => $schedules
@@ -88,7 +88,6 @@ class SecretaryController extends Controller
         SessionHistory::create([
             'schedule_history_id' => $schedule_id
         ]);
-
         return Redirect::route('secretary.index', $id)
             ->with('success', 'Sessão cadastrada com sucesso!');
     }
@@ -109,7 +108,7 @@ class SecretaryController extends Controller
                 'id' => 'required',
                 'pacient_id' => 'required',
                 'psicologa_id' => 'required',
-                'schedule_at' => 'required',
+                'schedule_at' => 'required|after:' . date('Y-m-d H:i'),
             ],
         );
         $schedule_time = Carbon::parse($request->schedule_at);

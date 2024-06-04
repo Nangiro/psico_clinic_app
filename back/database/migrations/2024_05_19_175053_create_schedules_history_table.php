@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('schedules_history', function (Blueprint $table) {
             $table->id();
             $table->integer('patient_id')->unsigned();
-            $table->foreign('patient_id')->references('id')->on('users'); // PACIENTE
+            $table->foreign('patient_id')->references('id')->on('patients'); // PACIENTE
             $table->integer('psychologist_id')->unsigned();
             $table->foreign('psychologist_id')->references('id')->on('users'); // PSICÓLOGO(A)
             $table->timestamp('schedule_time');

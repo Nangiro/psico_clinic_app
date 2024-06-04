@@ -30,7 +30,7 @@ export default function VerConsultas({ id, schedules }) {
             header: () => "Paciente",
             cell: ({ row }) => {
                 if (row.original.patient != undefined) {
-                    return <p>{row.original.patient.name}</p>
+                    return <p>{row.original.patient.user.name}</p>
                 }
             }
         },
