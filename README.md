@@ -1,5 +1,14 @@
 # Clinica Bem Estar
 
+## Versões
+- Docker v26.1
+- Kubectl v1.30
+- Minikube v1.33.1
+- PHP v8.1
+- Laravel v11.7.0
+- Vite v5.2.11
+- React v18.2
+
 ## Containers
 
 Para a execução do projeto será necessário a instalação das seguintes tecnologias em sua máquina:
@@ -48,7 +57,7 @@ php artisan serve
 
 A aplicação deverá estar sendo exeibida na URL do Pod resgatada anteriormente.
 
-## Front
+## Front (Iniciando Frontend individualmente)
 
 Para a execução do projeto será necessário a instalação das seguintes tecnologias em sua máquina:
 1. [Node](https://nodejs.org/en/download/package-manager)
