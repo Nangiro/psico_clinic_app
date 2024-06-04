@@ -16,11 +16,11 @@ export default function VerFicha({ id, schedule, patient }) {
     const [note, setNote] = useState(schedule.session.note)
 
     const DownloadAtestado = () => {
-        router.post(route('psychologist.baixarFicha', 1))
+        router.get(route('psychologist.baixarFicha', 1))
     }
 
     const DownloadEncaminhamento = () => {
-        router.post(route('psychologist.baixarFicha', 2))
+        router.get(route('psychologist.baixarFicha', 2))
     }
 
     const request = {

@@ -68,7 +68,12 @@ class PsychologistController extends Controller
 
     public function baixarFicha($id)
     {
-        $file = '/modelo_atestado.docx';
-        return Storage::download($file);
+        if ($id == 1) {
+            $file = '/modelo_atestado.docx';
+            return Storage::download($file);
+        } elseif ($id == 2) {
+            $file = '/modelo_encaminhamento.docx';
+            return Storage::download($file);
+        }
     }
 }

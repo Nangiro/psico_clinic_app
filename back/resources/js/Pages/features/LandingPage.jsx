@@ -52,12 +52,6 @@ export default function LandingPage() {
                 <div className="flex w-full max-w-[1366px] items-center justify-between h-full">
                     <p className="font-bold text-2xl font-['poppins']">Clínica Bem-estar</p>
                     <div className="flex">
-                        <Link className="mr-4 font-['poppins']" href={route('index')}>Home</Link>
-                        <p className="mr-4 font-['poppins']">Nossos serviços</p>
-                        <p className="mr-4 font-['poppins']">Quem somos</p>
-                        <p className="mr-4 font-['poppins']">Depoimentos</p>
-                        <p className="mr-4 font-['poppins']">Formulario de contato</p>
-                        <p className="mr-4 font-['poppins']">Informações de contato</p>
                         <Link className="mr-4 font-['poppins']" href={route('login')}>Entrar</Link>
                     </div>
                 </div>

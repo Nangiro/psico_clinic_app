@@ -38,7 +38,7 @@ Route::prefix('psychologist')->group(function () {
     Route::get('/ver/consultas/{id}', [PsychologistController::class, 'showSessions'])->name('psychologist.showSessions');
     Route::get('/ver/ficha/{id}/{schedule_id}', [PsychologistController::class, 'verFicha'])->name('psychologist.verFicha');
     Route::post('/salvar/ficha', [PsychologistController::class, 'salvarFicha'])->name('psychologist.salvarFicha');
-    Route::post('/baixar/ficha/{id}', [PsychologistController::class, 'baixarFicha'])->name('psychologist.baixarFicha');
+    Route::get('/baixar/ficha/{id}', [PsychologistController::class, 'baixarFicha'])->name('psychologist.baixarFicha');
 });
 
 Route::prefix('secretary')->group(function () {

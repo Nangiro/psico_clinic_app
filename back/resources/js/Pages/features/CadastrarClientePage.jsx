@@ -119,14 +119,14 @@ export default function CadastrarClientePage({ id }) {
                         onChange={(ev) => {
                             setCidade(ev.target.value)
                         }}
-                        label="Cidade"
+                        label="Estado"
                     />
                     <Input
                         value={state}
                         onChange={(ev) => {
                             setEstado(ev.target.value)
                         }}
-                        label="Estado"
+                        label="Cidade"
                     />
                     <Input
                         value={number}
